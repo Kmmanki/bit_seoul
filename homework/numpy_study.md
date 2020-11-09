@@ -41,4 +41,5 @@ arr = numpy.array([1,2,3,4])
      ]
      
      ps. 집 텐서플로우 설치
-     ![집 텐서플로우 설치](https://user-images.githubusercontent.com/50133267/98552409-c602f280-22e1-11eb-9f4a-35767f8fa309.PNG)
+    
+   ![집 텐서플로우 설치](https://user-images.githubusercontent.com/50133267/98552617-05c9da00-22e2-11eb-998f-3b15843db2c2.PNG)
