@@ -39,3 +39,7 @@ arr = numpy.array([1,2,3,4])
          [11,12,13],
          [14,15,16]
      ]
+     
+     ps. 집 텐서플로우 설치
+    
+   ![집 텐서플로우 설치](https://user-images.githubusercontent.com/50133267/98552617-05c9da00-22e2-11eb-998f-3b15843db2c2.PNG)
