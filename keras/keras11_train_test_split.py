@@ -21,6 +21,7 @@ x_predict = np.array(range(201,231))
 #2. 모델작성
 model = Sequential()
 model.add(Dense(100, input_dim =1))
+# model.add(Dense(100, input_dim =(1,)))
 model.add(Dense(100))
 model.add(Dense(100))
 model.add(Dense(100))

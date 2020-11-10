@@ -39,7 +39,7 @@ model.add(Dense(1))
 #3.컴파일
 model.compile(loss='mse', metrics=['acc'], optimizer='adam')
 
-model.fit(x_train, y_train, batch_size=1, epochs=100, validation_split=0.2)
+model.fit(x_train, y_train, batch_size=1, epochs=100, validation_data=(x_val,y_val))
 
 loss =model.evaluate(x_test, y_test, batch_size=1)
 
