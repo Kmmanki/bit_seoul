@@ -9,8 +9,6 @@ x = np.array([1,2,3,4,5,6,7,8,9,10])
 y = np.array([1,2,3,4,5,6,7,8,9,10])
 
 
-
-
 #2. 모델 구성
 model = Sequential()
 model.add(Dense(300000, input_dim=1, activation='relu'))

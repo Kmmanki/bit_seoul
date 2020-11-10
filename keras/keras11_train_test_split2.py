@@ -4,7 +4,6 @@ from sklearn.metrics import mean_squared_error
 from sklearn.metrics import r2_score
 from sklearn.model_selection import train_test_split
 
-#1. 데이터
 import numpy as np
 x = np.array(range(1,101))
 y = np.array(range(101,201))
@@ -22,12 +21,10 @@ x_train, x_val, y_train, y_val = train_test_split(
 print("x_train: ",x_train)
 print("y_val: ",x_val)
 
-x_predict = np.array(range(201,231))
 
 
 # exit()
 
-#2. 모델작성
 model = Sequential()
 model.add(Dense(100, input_dim =1))
 model.add(Dense(50))
@@ -36,16 +33,15 @@ model.add(Dense(12))
 model.add(Dense(6))
 model.add(Dense(1))
 
-#3.컴파일
 model.compile(loss='mse', metrics=['acc'], optimizer='adam')
-
 model.fit(x_train, y_train, batch_size=1, epochs=100, validation_data=(x_val,y_val))
 
+#train과 val을 분리하지 않았다면 아래와 같이 사용하면된다.
+# model.fit(x_train, y_train, batch_size=1, epochs=100, validation_split=0.2)
+
 loss =model.evaluate(x_test, y_test, batch_size=1)
-
+#train때 사용하지 않은 test로 평가 
 y_predict = model.predict(x_test)
-
-# 여긴 y_predic이 필요 
 
 def RMSE(y_test, y_predict):
     return np.sqrt(mean_squared_error(y_test, y_predict))
