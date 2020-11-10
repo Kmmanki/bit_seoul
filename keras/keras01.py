@@ -10,8 +10,8 @@ import numpy as np
 x = np.array([1,2,3,4,5,6,7,8,9,10])
 y = np.array([1,2,3,4,5,6,7,8,9,10])
 
-x_test = np.arange(11,21)
-y_test = np.arange(11,21)
+# x_test = np.arange(11,21)
+# y_test = np.arange(11,21)
 
 x_predic =np.arange(21,26)
 
@@ -25,9 +25,11 @@ model.add(Dense(1))
 
 #3. 데이터 모델 훈련
 model.compile(loss='mse', optimizer='adam', metrics=['acc'])
-hist = model.fit(x, y, epochs=500, batch_size=2)
+#hist = model.fit(x, y, epochs=500, batch_size=2)
+hist = model.fit(x, y, epochs=500)
 
-loss, acc = model.evaluate(x_test, y_test, batch_size=2)
+#loss, acc = model.evaluate(x_test, y_test, batch_size=2)
+loss, acc = model.evaluate(x, y, batch_size=2)
 
 print('acc:',acc)
 print('loss: ',loss)
