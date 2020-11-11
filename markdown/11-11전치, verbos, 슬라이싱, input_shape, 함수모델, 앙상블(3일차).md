@@ -13,8 +13,9 @@
 ###### 행열의 변환
 
 - x = np.array([range(1, 101), range(311, 411), range(100)]) 
-  - 로 진행하게되면 (3,100) => 개의 데이터를 가지고  각데이터는 100개의 속성을 가진다.
-
+  
+- 로 진행하게되면 (3,100) => 개의 데이터를 가지고  각데이터는 100개의 속성을 가진다.
+  
 - 내가 원하는것은 3개의 속성을 가지는 데이터를 100개 원한다. 
 
   - x.T
@@ -110,6 +111,13 @@ fit의 옵션으로  verbos => 진행상황의 출력을 알려주는 옵션 설
 
 **Sequential**(3,)
 
+| Layer (type) | Output Shape | Param # |
+| ---- | ---- | ---- | ---- |
+| dense (Dense) | (None, 5) | 20 |
+| dense_1 (Dense) | (None, 4) | 24 |
+| dense_4 (Dense) | (None, 3) | 15 |
+| dense_3 (Dense)    | (None, 1) | 4 |
+
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
 
@@ -120,8 +128,8 @@ _________________________________________________________________
 dense_2 (Dense)              (None, 3)                 15
 _________________________________________________________________
 dense_3 (Dense)              (None, 1)                 4
-
-=================================================================
+=>input 명시하지 않음
+<br>
 Total params: 63
 Trainable params: 63
 Non-trainable params: 0
@@ -132,28 +140,27 @@ Non-trainable params: 0
 **함수형(Model)(3,)**
 
 Model: "functional_1"
-_________________________________________________________________
-Layer (type)                 Output Shape              Param #
 
-input_1 (InputLayer)         [(None, 3)]               0 =>여기는 Sequential에서 명시하지 않았음
-_________________________________________________________________
-dense (Dense)                (None, 5)                 20
-_________________________________________________________________
-dense_1 (Dense)              (None, 4)                 24
-_________________________________________________________________
-dense_2 (Dense)              (None, 3)                 15
-_________________________________________________________________
-dense_3 (Dense)              (None, 1)                 4
+| Layer (type) | Output Shape | Param # |
+| ---- | ---- | ---- |
+| input_1 (InputLayer) | [(None, 3)] | 0 |
+| dense (Dense) | (None, 5) | 20 |
+| dense_1 (Dense) | (None, 4) | 24 |
+| dense_2 (Dense) | (None, 3) | 415|
+| dense_3 (Dense) | (None, 2) | 4 |
+=>input 명시
+<br>
 
 Total params: 63
 Trainable params: 63
 Non-trainable params: 0
 
+<br>
 
 
 함수형 모델은 layer의 이전 레이어를 명시하여 이어나감
 
-
+<br>
 
 m1_input = Input(shape=(3,), name='model1_input')
 
@@ -161,11 +168,11 @@ m1_dense1 = Dense(300, activation='relu', name='m1_d1')(m1_input)  <- 이전 레
 
 m1_dense2 = Dense(200, activation='relu', name='m1_d2')(m1_dense1) <-이전 레이어
 
-
+<br>
 
 1개의 레이어에서 2개의 레이어 분기 시에도 각 레이어는 동일한 이전 레이어를 명시
 
-
+<br>
 
 output1 = Dense(32, name='out1_d1')(m1_dense2 ) 
 
