@@ -25,9 +25,12 @@
 ------------
 <br>
 
-참고 사이트 
+**참고 사이트** 
 <a href="https://tykimos.github.io/lecture/">
 딥러닝에 대한 정리
 </a>
 <a href='https://keras.io/api/'>케라스 모듈 정리</a>
-
+<a href='https://machinelearningmastery.com/autokeras-for-classification-and-regression/'>
+오토케라스 튜닝
+</a>
+<a href='https://wonseokjung.github.io/Supermario1/'>슈퍼마리오 강화학습</a>

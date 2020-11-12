@@ -16,7 +16,7 @@ x = x.T
 y= y.T
 # # y~ 1, y ~2, y3 = w1x1 * w2x2 * w3x3 + b
 
-x_train, x_test, y_train, y_test = train_test_split( x,y, train_size= 0.6, shuffle=True)
+x_train, x_test, y_train, y_test = train_test_split( x, y, train_size= 0.6, shuffle=True)
 
 
 print(x_train)
