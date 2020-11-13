@@ -15,11 +15,13 @@
 다차원 행렬의 전치행렬, 다차원 행렬 슬라이싱, verbos, 다차원 행렬의 input_dim 처리, 함수형모델, 앙상블, Concatenate ...
 </a>
 
-### 4일차 2020.11.11
+### 4일차 2020.11.12
 <a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-12%20RNN%2CLSTM%2CGRU%2CsimpleRNN%2Creturn_sequenses.md'>
 RNN, LSTM GRU, simpleRNN, return_sequenses
 </a>
-r
+
+### 5일차 2020.11.13
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-13%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%8C%8C%EC%8B%B1%2C%20%EB%AA%A8%EB%8D%B8%EC%9D%98%20%EC%A0%80%EC%9E%A5%EA%B3%BC%20%EB%A1%9C%EB%93%9C%2C%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%20%EC%8B%9C%EA%B0%81%ED%99%94%2C%20%EC%A0%84%EC%B2%98%EB%A6%AC.md'>데이터 파싱, 모델의 저장과 로드, 데이터의 시각화, 전처리</a>
 
 <br>
 ------------
@@ -34,3 +36,6 @@ r
 오토케라스 튜닝
 </a>
 <a href='https://wonseokjung.github.io/Supermario1/'>슈퍼마리오 강화학습</a>
+<a href='https://excelsior-cjh.tistory.com/109'>
+판다스를 이용한 주가 가져오기 
+</a>
