@@ -1,6 +1,6 @@
 import numpy as np
 from tensorflow.keras.models import Sequential, load_model
-from tensorflow.keras.layers import Dense,LSTM, Reshape
+from tensorflow.keras.layers import Dense,LSTM, Reshape,Input
 from tensorflow.keras.callbacks import EarlyStopping
 from sklearn.model_selection import train_test_split
 
@@ -52,12 +52,13 @@ x_train, x_test, y_train, y_test = train_test_split(x,y, train_size=0.8)
 #2.모델 작성
 
 model = load_model("./save/keras30.h5")
-model.summary()
-model.add(Reshape((1,), input_shape=(4,1) ))
+model.summary()#4,1
+model(Input(shape=(3,1), name='input1'))
 model.summary()
 
- TODO: 
-# 과제 load한 모델의 Input_shape layer를 수정하여 적용하자.
+# TODO: 
+# 시퀀셜을 펑셔널로 만들어서 서머리로 확인해보자 
+# 과제 load한 모델의 Input_shape layer를 수정하여 적용하자. 
 
 
 # model = Sequential()
