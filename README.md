@@ -10,17 +10,12 @@
 분류회귀, Metrics, validation, scalaVector...
 </a>
 
-### 2일차 
-<a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11.10%2Cmatrics%2Cvalidation%2Cmodel(2%EC%9D%BC%EC%B0%A8).md'>
-분류회귀, Metrics, validation, scalaVector...
-</a>
-
-### 3일차 
+### 3일차 2020.11.11
 <a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-11%EC%A0%84%EC%B9%98%2C%20verbos%2C%20%EC%8A%AC%EB%9D%BC%EC%9D%B4%EC%8B%B1%2C%20input_shape%2C%20%ED%95%A8%EC%88%98%EB%AA%A8%EB%8D%B8%2C%20%EC%95%99%EC%83%81%EB%B8%94(3%EC%9D%BC%EC%B0%A8).md'>
 다차원 행렬의 전치행렬, 다차원 행렬 슬라이싱, verbos, 다차원 행렬의 input_dim 처리, 함수형모델, 앙상블, Concatenate ...
 </a>
 
-### 4일차
+### 4일차 2020.11.11
 <a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-12%20RNN%2CLSTM%2CGRU%2CsimpleRNN%2Creturn_sequenses.md'>
 RNN, LSTM GRU, simpleRNN, return_sequenses
 </a>
