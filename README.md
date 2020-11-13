@@ -20,6 +20,11 @@
 다차원 행렬의 전치행렬, 다차원 행렬 슬라이싱, verbos, 다차원 행렬의 input_dim 처리, 함수형모델, 앙상블, Concatenate ...
 </a>
 
+### 4일차
+<a href=''>
+RNN, LSTM GRU, simpleRNN, return_sequenses
+</a>
+
 
 <br>
 ------------

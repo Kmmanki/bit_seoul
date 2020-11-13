@@ -22,31 +22,46 @@ y= np.array([4,5,6,7,8,9,10,11,12,13,50,60,70])
 x1=x1.reshape(13,3)
 x2=x2.reshape(13,3)
 
+# #predict
+x1_input = x1_input.reshape(1,3)
+x2_input = x2_input.reshape(1,3)
+
 # #2. model
 model1 = Sequential()
-model1.add(LSTM(5, input_shape=(3,1)))
-model1.add(Dense(10))
+model1.add(LSTM(100, activation='relu', input_shape=(3,1)))
+model1.add(Dense(50, activation='relu'))
+model1.add(Dense(30, activation='relu'))
+model1.add(Dense(30, activation='relu'))
+model1.add(Dense(10, activation='relu'))
 
 
 model2 = Sequential()
-model2.add(LSTM(5, input_shape =(3,1)))
-model2.add(Dense(10))
+model2.add(LSTM(60, activation='relu',input_shape =(3,1)))
+model2.add(Dense(10, activation='relu'))
+model2.add(Dense(50, activation='relu'))
+model2.add(Dense(50, activation='relu'))
+model2.add(Dense(10, activation='relu'))
+model2.add(Dense(1, activation='relu'))
 
 concat_model = Concatenate()([model1.output, model2.output])
-model_concat = Dense(1)(concat_model)
+
+model_concat = Dense(30, activation='relu')(concat_model)
+model_concat = Dense(50, activation='relu')(model_concat)
+model_concat = Dense(100, activation='relu')(model_concat)
+model_concat = Dense(100, activation='relu')(model_concat)
+model_concat = Dense(60, activation='relu')(model_concat)
+model_concat = Dense(1, activation='linear')(model_concat)
 
 model = Model(inputs=[model1.input, model2.input], outputs=[model_concat])
-
 
 model.summary()
 #Compile
 model.compile(loss= 'mse', metrics=['mse'], optimizer='adam')
-earlyStopping = EarlyStopping(monitor='loss', patience=125, mode='min')
-model.fit([x1, x2], y, batch_size=3, epochs=10000, verbose=1, callbacks=[earlyStopping])
+earlyStopping = EarlyStopping(monitor='loss', patience=100, mode='min')
+model.fit([x1, x2], y, batch_size=3, epochs=1000, verbose=1
+, callbacks=[earlyStopping]
+)
 
-# #predict
-x1_input = x1_input.reshape(1,3)
-x2_input = x2_input.reshape(1,3)
 
 y_predict = model.predict([x1_input, x2_input])
 print(y_predict)

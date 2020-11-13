@@ -19,8 +19,8 @@ x2_input = np.array([65,75,85])
 
 y= np.array([4,5,6,7,8,9,10,11,12,13,50,60,70])
 
-x1=x1.reshape(13,3)
-x2=x2.reshape(13,3)
+x1=x1.reshape(13,3,1)
+x2=x2.reshape(13,3,1)
 
 # #2. model
 input1 = Input(shape=(3,1))
