@@ -21,10 +21,10 @@
 </a>
 
 ### 4일차
-<a href=''>
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-12%20RNN%2CLSTM%2CGRU%2CsimpleRNN%2Creturn_sequenses.md'>
 RNN, LSTM GRU, simpleRNN, return_sequenses
 </a>
-
+r
 
 <br>
 ------------
