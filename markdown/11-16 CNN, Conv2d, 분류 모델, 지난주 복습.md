@@ -125,42 +125,42 @@ CNN, Conv2d, 분류 모델, 지난주 복습
           <br>
 ------
 <br>
- - Conv2d 과정
-   1. 데이터 전처리
+   - Conv2d 과정
+      1. 데이터 전처리
 
-      1-1 mnist에서 데이터 불러오기, train, test
+         1-1 mnist에서 데이터 불러오기, train, test
 
-      1-2 분류 모델이기 때문에 y를 oneHotEncoding 하기
+         1-2 분류 모델이기 때문에 y를 oneHotEncoding 하기
 
-      1-3 Conv2d의 reshapesms 이미지 수, 가로, 세로, 채널로 reshape필요
+         1-3 Conv2d의 reshapesms 이미지 수, 가로, 세로, 채널로 reshape필요
 
-      1-4 빠르고 정확하 연산을 위해 minmaxScaling
+         1-4 빠르고 정확하 연산을 위해 minmaxScaling
 
-   2. 모델링
+      2. 모델링
 
-      2-1 CNN 중 Conv2d를 이용한 모델링
+         2-1 CNN 중 Conv2d를 이용한 모델링
 
-      2-2 Conv2d의 input_shape는 가로 세로 채널로 채널은 흑백은 1 컬러는 3을 가진다.
+         2-2 Conv2d의 input_shape는 가로 세로 채널로 채널은 흑백은 1 컬러는 3을 가진다.
 
-      2-3 Conv2d에서 Dense로 연결 시 Conv2d는 4치원을 반환하므로 Flatten을 사용하여 스칼라로 output으로 반환
+         2-3 Conv2d에서 Dense로 연결 시 Conv2d는 4치원을 반환하므로 Flatten을 사용하여 스칼라로 output으로 반환
 
-      2-4 최종 레이어에서의 노드 수는 분류의 총 종류 수, activation은 반드시 softmax
+         2-4 최종 레이어에서의 노드 수는 분류의 총 종류 수, activation은 반드시 softmax
 
-   3. 컴파일 및 훈련
+      3. 컴파일 및 훈련
 
-      3-1 분류의 loss는 반드시 categorical_crossentropy
+         3-1 분류의 loss는 반드시 categorical_crossentropy
 
-      3-2 분류의 메트릭스는 acc로 
+         3-2 분류의 메트릭스는 acc로 
 
-   4. 예측 및 y_predict구하기
+      4. 예측 및 y_predict구하기
 
-      4-1 y_predict는 OneHotEncoding된 상태로 반환되기 때문에 np.argmax를 사용하여 디코딩 필요
+         4-1 y_predict는 OneHotEncoding된 상태로 반환되기 때문에 np.argmax를 사용하여 디코딩 필요
 
-      np.argmax(y_predict, axis=1)를 사용 하여 각 행마다 디코딩
+         np.argmax(y_predict, axis=1)를 사용 하여 각 행마다 디코딩
 
-<br>
-------
-<br>
+   <br>
+   --------
+   <br>
 
 - DNN으로 구현하는 분류
 
