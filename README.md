@@ -23,6 +23,8 @@ RNN, LSTM GRU, simpleRNN, return_sequenses
 ### 5일차 2020.11.13
 <a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-13%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%8C%8C%EC%8B%B1%2C%20%EB%AA%A8%EB%8D%B8%EC%9D%98%20%EC%A0%80%EC%9E%A5%EA%B3%BC%20%EB%A1%9C%EB%93%9C%2C%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98%20%EC%8B%9C%EA%B0%81%ED%99%94%2C%20%EC%A0%84%EC%B2%98%EB%A6%AC.md'>데이터 파싱, 모델의 저장과 로드, 데이터의 시각화, 전처리</a>
 
+### 6일차 2020.11.16
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-16%20CNN%2C%20Conv2d%2C%20%EB%B6%84%EB%A5%98%20%EB%AA%A8%EB%8D%B8%2C%20%EC%A7%80%EB%82%9C%EC%A3%BC%20%EB%B3%B5%EC%8A%B5.md'>CNN, Conv2d, 분류 모델, 지난주 복습</a>
 <br>
 ------------
 <br>
