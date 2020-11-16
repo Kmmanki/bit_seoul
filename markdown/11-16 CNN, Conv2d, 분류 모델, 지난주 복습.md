@@ -73,7 +73,7 @@ CNN, Conv2d, 분류 모델, 지난주 복습
 컴퓨터가 이해하기 쉽도록 나누어 특징을 찾아냄
 
 ### Conv2d
-
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/keras/keras35_cnn1.py'>keras35</a>
  - model.add(Conv2D(10, (2,2),input_shape=(5,5,1))) 
 
     - filter
@@ -143,7 +143,7 @@ CNN, Conv2d, 분류 모델, 지난주 복습
 <br>
 
 ### Conv2d 과정
-
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/keras/keras36_mmist_cnn2.py'>keras36</a>
 - 데이터 전처리
 
    - mnist에서 데이터 불러오기, train, test
@@ -183,6 +183,7 @@ CNN, Conv2d, 분류 모델, 지난주 복습
 <br>
 
 ### DNN으로 구현하는 분류
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/keras/keras37_mnist_DNN.py'>keras37</a>
 
 - Conv2d와 다른점은 input_shape의 입력과 입력의 reshape
    - x_train.shape가 60000,28,28이라면
