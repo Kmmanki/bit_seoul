@@ -93,22 +93,22 @@ CNN, Conv2d, 분류 모델, 지난주 복습
        - model.add(Conv2D(10, (2,2),input_shape=(10,10,1)))
           - 파라미터의 수 = (채널 * 커널사이즈 * +1(바이어스) ) 나가는 노드
           - ( 1 * 2 * 2 + 1 ) * 10 
-<br>
-------
-<br>
+      <br>
+      ------
+      <br>
  - Maxpolling2d
        - stride 없이 잘라 feature가 높은 픽셀만 남기는 기법
        - stride 없기 때문에 반으로 줄어듬 (3,3,7) 노드는 이전의 노드 가져옴
-<br>
-------
-<br>
+      <br>
+      ------
+      <br>
  - Flatten()
        - Conv2d를 스칼라로 넘겨주어야 함.
        - model.add(Flatten())를 통해  변환
        - rowsxcolsxchennel = 63(노드 수 )
-<br>
-------
-<br>
+      <br>
+      ------
+      <br>
  - 원핫 인코딩
        - sklearn(skrlearn.preprocessing.OneHotEncoder)
        - keras(tensorflow.keras.utils.to_categorical)
@@ -122,9 +122,9 @@ CNN, Conv2d, 분류 모델, 지난주 복습
           - <br>
           - y_predict의 값은 총합이 1이 되며  각 자리 수 중 가장 큰 값을 추출하여  분류
 
-<br>
-------
-<br>
+      <br>
+      ------
+      <br>
    - Conv2d 과정
       - 데이터 전처리
 
@@ -158,9 +158,9 @@ CNN, Conv2d, 분류 모델, 지난주 복습
 
          - np.argmax(y_predict, axis=1)를 사용 하여 각 행마다 디코딩
 
-   <br>
-   --------
-   <br>
+      <br>
+      --------
+      <br>
 
 - DNN으로 구현하는 분류
 
