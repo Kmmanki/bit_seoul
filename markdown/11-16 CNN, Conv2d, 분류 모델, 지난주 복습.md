@@ -75,6 +75,7 @@ CNN, Conv2d, 분류 모델, 지난주 복습
  - model.add(Conv2D(10, (2,2),input_shape=(5,5,1))) 
 
     - filter
+      	
       	- 출력 공간의 차원 = 다음 레이어에 넘길 노드의 갯수 = 노드 수 
     - Kernel_size:
        -  2D Convolutional  창의 높이와 너비 
@@ -92,83 +93,99 @@ CNN, Conv2d, 분류 모델, 지난주 복습
     - param 계산
        - model.add(Conv2D(10, (2,2),input_shape=(10,10,1)))
           - 파라미터의 수 = (채널 * 커널사이즈 * +1(바이어스) ) 나가는 노드
-          - ( 1 * 2 * 2 + 1 ) * 10 
-      <br>
+       - ( 1 * 2 * 2 + 1 ) * 10 
+        
+      
       ------
       <br>
- - Maxpolling2d
-       - stride 없이 잘라 feature가 높은 픽셀만 남기는 기법
-       - stride 없기 때문에 반으로 줄어듬 (3,3,7) 노드는 이전의 노드 가져옴
-      <br>
-      ------
-      <br>
- - Flatten()
-       - Conv2d를 스칼라로 넘겨주어야 함.
-       - model.add(Flatten())를 통해  변환
-       - rowsxcolsxchennel = 63(노드 수 )
-      <br>
-      ------
-      <br>
- - 원핫 인코딩
-       - sklearn(skrlearn.preprocessing.OneHotEncoder)
-       - keras(tensorflow.keras.utils.to_categorical)
-       - (1) 각 단어에 고유한 인덱스를 부여 (정수 인코딩)
-         (2) 표현하고 싶은 단어의 인덱스의 위치에 1을 부여, 다른 단어의 인덱스의 위치에는 0을 부여
-          - 1 : 10000
-          - 2: 01000
-          - 3: 00100
-          - 4: 00010
-          - 5: 00001
-          - <br>
-          - y_predict의 값은 총합이 1이 되며  각 자리 수 중 가장 큰 값을 추출하여  분류
 
-      <br>
-      ------
-      <br>
-   - Conv2d 과정
-      - 데이터 전처리
+### Maxpolling2d
 
-         - mnist에서 데이터 불러오기, train, test
+   - stride 없이 잘라 feature가 높은 픽셀만 남기는 기법
+   - stride 없기 때문에 반으로 줄어듬 (3,3,7) 노드는 이전의 노드 가져옴
+    
+------
+  <br>
 
-         - 분류 모델이기 때문에 y를 oneHotEncoding 하기
+### Flatten()
 
-         - Conv2d의 reshapesms 이미지 수, 가로, 세로, 채널로 reshape필요
+   - Conv2d를 스칼라로 넘겨주어야 함.
+   - model.add(Flatten())를 통해  변환
+   - rowsxcolsxchennel = 63(노드 수 )
+    
+------
+  <br>
 
-         - 빠르고 정확하 연산을 위해 minmaxScaling
+### 원핫 인코딩
 
-      - 모델링
+   - sklearn(skrlearn.preprocessing.OneHotEncoder)
+   - keras(tensorflow.keras.utils.to_categorical)
+   - (1) 각 단어에 고유한 인덱스를 부여 (정수 인코딩)
+     (2) 표현하고 싶은 단어의 인덱스의 위치에 1을 부여, 다른 단어의 인덱스의 위치에는 0을 부여
+      - 1 : 10000
+      - 2: 01000
+      - 3: 00100
+      - 4: 00010
+      - 5: 00001
+     
+        
+      - y_predict의 값은 총합이 1이 되며  각 자리 수 중 가장 큰 값을 추출하여  분류
 
-         - CNN 중 Conv2d를 이용한 모델링
 
-         - Conv2d의 input_shape는 가로 세로 채널로 채널은 흑백은 1 컬러는 3을 가진다.
+  ------
 
-         - Conv2d에서 Dense로 연결 시 Conv2d는 4치원을 반환하므로 Flatten을 사용하여 스칼라로 output으로 반환
+--------
 
-         - 최종 레이어에서의 노드 수는 분류의 총 종류 수, activation은 반드시 softmax
+ <br>
 
-      - 컴파일 및 훈련
+### Conv2d 과정
 
-         - 분류의 loss는 반드시 categorical_crossentropy
+- 데이터 전처리
 
-         - 분류의 메트릭스는 acc로 
+   - mnist에서 데이터 불러오기, train, test
 
-      - 예측 및 y_predict구하기
+   - 분류 모델이기 때문에 y를 oneHotEncoding 하기
 
-         - y_predict는 OneHotEncoding된 상태로 반환되기 때문에 np.argmax를 사용하여 디코딩 필요
+   - Conv2d의 reshapesms 이미지 수, 가로, 세로, 채널로 reshape필요
 
-         - np.argmax(y_predict, axis=1)를 사용 하여 각 행마다 디코딩
+   - 빠르고 정확하 연산을 위해 minmaxScaling
 
-      <br>
-      --------
-      <br>
+- 모델링
 
-- DNN으로 구현하는 분류
+   - CNN 중 Conv2d를 이용한 모델링
 
-   - Conv2d와 다른점은 input_shape의 입력과 입력의 reshape
-      - x_train.shape가 60000,28,28이라면
-      - x_train.reshape(60000,28x28)
-      - input_shape=(28x28,) 
-      - 나머지는 Conv2d와 같다.
+   - Conv2d의 input_shape는 가로 세로 채널로 채널은 흑백은 1 컬러는 3을 가진다.
+
+   - Conv2d에서 Dense로 연결 시 Conv2d는 4치원을 반환하므로 Flatten을 사용하여 스칼라로 output으로 반환
+
+   - 최종 레이어에서의 노드 수는 분류의 총 종류 수, activation은 반드시 softmax
+
+- 컴파일 및 훈련
+
+   - 분류의 loss는 반드시 categorical_crossentropy
+
+   - 분류의 메트릭스는 acc로 
+
+- 예측 및 y_predict구하기
+
+   - y_predict는 OneHotEncoding된 상태로 반환되기 때문에 np.argmax를 사용하여 디코딩 필요
+
+   - np.argmax(y_predict, axis=1)를 사용 하여 각 행마다 디코딩
+
+
+--------
+
+-----
+
+<br>
+
+### DNN으로 구현하는 분류
+
+- Conv2d와 다른점은 input_shape의 입력과 입력의 reshape
+   - x_train.shape가 60000,28,28이라면
+   - x_train.reshape(60000,28x28)
+   - input_shape=(28x28,) 
+   - 나머지는 Conv2d와 같다.
 
 
 
