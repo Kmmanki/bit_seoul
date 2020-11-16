@@ -63,7 +63,7 @@ model.compile(loss='mse', optimizer='adam', metrics='mae')
 elaystopping = EarlyStopping(monitor='loss', patience=50, mode='min')
 
 #여기
-to_hist = TensorBoard(log_dir='grahp' #로그가 드러갈 폴더를 지정
+to_hist = TensorBoard(log_dir='graph' #로그가 드러갈 폴더를 지정
 , histogram_freq=0
 , write_graph=True
 , write_images=True)
