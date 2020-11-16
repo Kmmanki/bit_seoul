@@ -1,5 +1,5 @@
 import numpy as np
-from tensorflow.keras.models import Sequential, load_model
+from tensorflow.keras.models import Sequential, load_model, Model
 from tensorflow.keras.layers import Dense,LSTM, Reshape,Input
 from tensorflow.keras.callbacks import EarlyStopping
 from sklearn.model_selection import train_test_split
@@ -50,10 +50,11 @@ print(y.shape)
 x_train, x_test, y_train, y_test = train_test_split(x,y, train_size=0.8)
 
 #2.모델 작성
-
 model = load_model("./save/keras30.h5")
-model.summary()#4,1
-model(Input(shape=(3,1), name='input1'))
+input1 = Input(shape=(3, 1))
+dense = model(input1)
+output1 = Dense(1)(dense)
+model = Model(inputs=input1, outputs=output1) #새로운 함수 모델 사이에 시퀀셜 넣기
 model.summary()
 
 # TODO: 
