@@ -33,11 +33,26 @@ RNN, LSTM GRU, simpleRNN, return_sequenses
 <a href="https://tykimos.github.io/lecture/">
 딥러닝에 대한 정리
 </a>
+
+<br>
+
 <a href='https://keras.io/api/'>케라스 모듈 정리</a>
+
+<br>
+
+
 <a href='https://machinelearningmastery.com/autokeras-for-classification-and-regression/'>
 오토케라스 튜닝
 </a>
+
+<br>
+
+
 <a href='https://wonseokjung.github.io/Supermario1/'>슈퍼마리오 강화학습</a>
+
+<br>
+
+
 <a href='https://excelsior-cjh.tistory.com/109'>
 판다스를 이용한 주가 가져오기 
 </a>
