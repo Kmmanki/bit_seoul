@@ -25,6 +25,11 @@ RNN, LSTM GRU, simpleRNN, return_sequenses
 
 ### 6일차 2020.11.16
 <a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-16%20CNN%2C%20Conv2d%2C%20%EB%B6%84%EB%A5%98%20%EB%AA%A8%EB%8D%B8%2C%20%EC%A7%80%EB%82%9C%EC%A3%BC%20%EB%B3%B5%EC%8A%B5.md'>CNN, Conv2d, 분류 모델, 지난주 복습</a>
+
+### 7일차 2020.11.17
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-17%20cifar%2C%20fashion%2C%20load_boston%2Cdiabetes%2C%20dropout.md'>cifar, fashion, load_boston,diabetes, dropout</a>
+
+
 <br>
 ------------
 <br>
