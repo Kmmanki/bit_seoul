@@ -7,8 +7,6 @@ from tensorflow.keras.callbacks import EarlyStopping, TensorBoard
 from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 
-import shutil
-# shutil.rmtree(r"D:\Study\graph")
 
 import numpy as np
 
@@ -97,7 +95,12 @@ plt.ylabel("loss, val_loss")
 plt.xlabel('epoches')
 plt.legend(['loss', 'val_loss'])
 
+
+
 plt.show()
+
+import shutil
+shutil.rmtree(r"D:\Study\graph")
 '''
 r2 0.8이상
 loss:  1467.665283203125
