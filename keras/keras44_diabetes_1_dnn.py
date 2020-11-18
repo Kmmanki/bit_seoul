@@ -18,47 +18,26 @@ y = dataset.target
 print(x.shape) #442,10
 print(y.shape) #442
 
-scaler = MinMaxScaler()
-scaler.fit(x)
-x = scaler.transform(x)
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.8)
 
-# model = Sequential() #r2 = 0.6
-# model.add(Dense(30, activation='relu', input_shape=(10,)))
-# model.add(Dense(80, activation='relu'))
-# model.add(Dropout(0.3))
-# model.add(Dense(300, activation='relu'))
-# model.add(Dropout(0.3))
-# model.add(Dense(80, activation='relu'))
-# model.add(Dropout(0.3))
-# model.add(Dense(30, activation='relu'))
-# model.add(Dense(1))
 
 model = Sequential() #r2 = 
-model.add(Dense(1, activation='relu', input_shape=(10,)))
 model.add(Dense(10, activation='relu', input_shape=(10,)))
-model.add(Dense(20, activation='relu'))
+model.add(Dense(200, activation='relu'))
+model.add(Dropout(0.2))
+model.add(Dense(150, activation='relu'))
 model.add(Dense(30, activation='relu'))
-model.add(Dense(45, activation='relu'))
-model.add(Dense(80, activation='relu'))
-model.add(Dropout(0.4))
-model.add(Dense(50, activation='relu'))
-model.add(Dense(40, activation='relu'))
-model.add(Dense(45, activation='relu'))
-model.add(Dense(30, activation='relu'))
-model.add(Dense(20, activation='relu'))
-model.add(Dense(10, activation='relu'))
 model.add(Dense(1))
 
 model.compile(loss='mse', optimizer='adam', metrics=[])
-ealystopping = EarlyStopping(monitor='loss', patience=15, mode='min')
+ealystopping = EarlyStopping(monitor='loss', patience=100, mode='min')
 
 to_hist = TensorBoard(log_dir='graph', write_graph=True, write_images=True, histogram_freq=0)
-hist=model.fit(x_train, y_train, epochs=300, callbacks=[ealystopping, to_hist], verbose=1, validation_split=0.2, batch_size=4)
+hist=model.fit(x_train, y_train, epochs=1000, callbacks=[ealystopping, to_hist], verbose=1, validation_split=0.2, batch_size=2)
 
 #평가
-loss = model.evaluate(x_train, y_train, batch_size=4)
+loss = model.evaluate(x_test, y_test, batch_size=2)
 
 #예측
 x_predict = x_test[30:40]
