@@ -56,7 +56,7 @@ model.summary()
 model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["acc"])
 
 path= './save/mnist/'
-checkPoint = ModelCheckpoint(filepath=path+'keras49-mnist-{epoch:02d}--{val_loss:.4f}', save_best_only=True, mode='auto', monitor='val_loss')
+checkPoint = ModelCheckpoint(filepath='./save/mnist/keras49-mnist-{epoch:02d}--{val_loss:.4f}.', save_best_only=True, mode='auto', monitor='val_loss')
 es = EarlyStopping(patience=3,mode='auto',monitor='loss')
 
 model.fit(x_train, y_train, epochs=500, batch_size=32, verbose=1, validation_split=0.2, callbacks=[es, checkPoint])

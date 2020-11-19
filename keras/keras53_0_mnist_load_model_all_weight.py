@@ -7,56 +7,60 @@ import matplotlib.pyplot as plt
 from tensorflow.keras.datasets import mnist
 
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
-print(x_train.shape, x_test.shape)
-print(y_train.shape, y_test.shape) 
 
 
 from tensorflow.keras.utils import to_categorical
 y_train = to_categorical(y_train)
 y_test = to_categorical(y_test)
-print(y_train.shape, y_test.shape)
-print(y_train[0])
 
 x_train = x_train.reshape(60000, 28, 28, 1).astype('float32')/255. 
 x_test = x_test.reshape(10000, 28, 28, 1).astype('float32')/255.
-print(x_train[0])
 
 #predict 만들기
 x_pred = x_test[-10:]
 y_pred = y_test[-10:]
 
+path = './save/mnist/modelSave'
+path2 = './save/mnist/'
 
-#2. 모델
-model = Sequential()
-model.add(Conv2D(50, (2,2), padding="same", input_shape=(28,28,1)))
-model.add(Dropout(0.2)) 
-model.add(Conv2D(30, (2,2), padding="same"))
-model.add(Dropout(0.2))
-model.add(Conv2D(20, (2,2), padding="same"))
-model.add(Dropout(0.2))
-model.add(Conv2D(15, (2,2), padding="same"))
-model.add(Dropout(0.2))
-model.add(Conv2D(10, (2,2), padding="same"))
-model.add(Dropout(0.2))
-model.add(Conv2D(5, (2,2), padding="same"))
-model.add(MaxPooling2D(pool_size=2))
-model.add(Dropout(0.2))
-model.add(Flatten())
-model.add(Dense(20, activation='relu'))
-model.add(Dropout(0.2))
-model.add(Dense(10, activation='softmax'))
+####1. loadmodel
+model1 = load_model(path+'.h5')
+loss, mae=model1.evaluate(x_test, y_test, batch_size=64)
+print("model1 loss: ", loss)
+print("model2 acc: ", mae)
 
-model.summary()
+####2. loadCheckPoint
+model2 = load_model(path2+"keras49-mnist-13--0.1365.hdf5") # 계속 수정
+loss, mae=model2.evaluate(x_test, y_test, batch_size=64)
+print("model2 loss: ", loss)
+print("model2 mae: ", mae)
+
+####3. loadweight
+model3 = Sequential()
+model3.add(Conv2D(50, (2,2), padding="same", input_shape=(28,28,1)))
+model3.add(Dropout(0.2)) 
+model3.add(Conv2D(30, (2,2), padding="same"))
+model3.add(Dropout(0.2))
+model3.add(Conv2D(20, (2,2), padding="same"))
+model3.add(Dropout(0.2))
+model3.add(Conv2D(15, (2,2), padding="same"))
+model3.add(Dropout(0.2))
+model3.add(Conv2D(10, (2,2), padding="same"))
+model3.add(Dropout(0.2))
+model3.add(Conv2D(5, (2,2), padding="same"))
+model3.add(MaxPooling2D(pool_size=2))
+model3.add(Dropout(0.2))
+model3.add(Flatten())
+model3.add(Dense(20, activation='relu'))
+model3.add(Dropout(0.2))
+model3.add(Dense(10, activation='softmax'))
+
+model3.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["acc"])
 
 
-#3. 컴파일, 훈련
-model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["acc"])
 
-es = EarlyStopping(patience=3,mode='auto',monitor='loss')
+model3.load_weights(path+"_weight.h5")
 
-model.fit(x_train, y_train, epochs=500, batch_size=32, verbose=1, validation_split=0.2, callbacks=[es])
-
-#4. 평가, 예측
-loss, acc = model.evaluate(x_test,y_test,batch_size=32)
-print("loss : ", loss)
-print("acc : ", acc)
+loss, mae = model3.evaluate(x_test, y_test, batch_size=64)
+print("model3 loss: ", loss)
+print("model3 acc: ", mae)  
