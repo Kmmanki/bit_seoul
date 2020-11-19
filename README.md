@@ -29,7 +29,14 @@ RNN, LSTM GRU, simpleRNN, return_sequenses
 ### 7일차 2020.11.17
 <a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-17%20cifar%2C%20fashion%2C%20load_boston%2Cdiabetes%2C%20dropout.md'>cifar, fashion, load_boston,diabetes, dropout</a>
 
+### 8일차 2020.11.18
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-18%20%EC%9D%B4%EC%A7%84%EB%B6%84%EB%A5%98%2C%20sigmoid%2C%20mode.save%2C%20ModelCheckPoint.md'>
+이진분류, sigmoid, mode.save, ModelCheckPoint
+</a>
 
+### 9일차 2020.11.19
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-19%20numpy.save()%2C%20pandas%2C%20conv1D.md'>numpy.save(), pandas, conv1D
+</a>
 <br>
 ------------
 <br>
