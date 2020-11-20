@@ -4,3 +4,7 @@ graph/*
 grahp/*
 data/*
 ./data
+homework/samsung_1_endprice/*.npy
+homework/samsung_1_endprice/model
+homework/samsung_2_startprice/*.npy
+homework/samsung_2_startprice/models
