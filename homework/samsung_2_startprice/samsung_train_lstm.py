@@ -49,7 +49,7 @@ x_gold_train, x_gold_test = train_test_split(x_gold, train_size=0.8, shuffle=Fal
 
 sam_input = Input(shape=(5,8)) 
 sam_lstm = LSTM(100,return_sequences=False )(sam_input)
-output = Dropout(0.15)(sam_lstm)
+output = Dropout(0.2)(sam_lstm)
 sam_dense = Dense(300, activation='relu')(output)
 sam_dense = Dense(300, activation='relu')(sam_dense)
 sam_dense = Dense(300, activation='relu')(sam_dense)
