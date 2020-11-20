@@ -87,7 +87,7 @@ output = Dense(1)(output)
 model = Model(inputs=[sam_input, bit_input, kosdak_input, gold_input], outputs = [output])
 
 model.compile(loss='mse', optimizer='adam', metrics=[])
-ealystopping = EarlyStopping(monitor='loss', patience=100, mode='min')
+ealystopping = EarlyStopping(monitor='loss', patience=30, mode='min')
 modelPath = './homework/samsung_2_startprice/models/samsung_model-{val_loss:.4f}.hdf5'
 checkPoint = ModelCheckpoint(filepath=modelPath, monitor='val_loss', save_best_only=True, mode='auto')
 
