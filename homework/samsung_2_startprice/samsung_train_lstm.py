@@ -92,7 +92,7 @@ checkPoint = ModelCheckpoint(filepath=modelPath, monitor='val_loss', save_best_o
 model.summary()
 for i in range(10000):
     hist = model.fit([x_samsung_train, x_bit_train, x_kosdak_train, x_gold_train]
-                    , [y_samsung_train], epochs=1000, callbacks=[ealystopping, checkPoint],
+                    , [y_samsung_train], epochs=500, callbacks=[ealystopping, checkPoint],
                     verbose=1, validation_split=0.2, batch_size=4)
 
     loss = model.evaluate([x_samsung_test, x_bit_test, x_kosdak_test, x_gold_test], [y_samsung_test], batch_size=4)
@@ -103,6 +103,7 @@ for i in range(10000):
 
     r2 = r2_score(y_samsung_test, y_predict)
     r2 = r2.reshape(1,)[0]
+    r2str = '%.3f' % r2
 
     end_price = model.predict([x_predict_samsung,x_predict_bit,x_predict_kosdak, x_predict_gold ])
     end_price=end_price.reshape(1,)[0]
@@ -110,11 +111,10 @@ for i in range(10000):
     print(r2)
 
     if end_price <= 66000 and 63000 >= end_price and r2 > 0.99 :
-        model.save('./homework/samsung_2_startprice/models/savemodel/99/'+str(i)+'번째'+str(loss)+'wowow.h5')
+        model.save('./homework/samsung_2_startprice/models/savemodel/lstm99/r2__'+r2str+str(loss)+'wowow.h5')
     elif end_price <= 66000 and 63000 >= end_price and r2 > 0.98:
-        model.save('./homework/samsung_2_startprice/models/savemodel/98/'+str(i)+'번째'+str(loss)+'wowow.h5')
+        model.save('./homework/samsung_2_startprice/models/savemodel/lstm98/r2__'+r2str+str(loss)+'wowow.h5')
     elif end_price <= 66000 and 63000 >= end_price and r2 > 0.97:
-        model.save('./homework/samsung_2_startprice/models/savemodel/97/'+str(i)+'번째'+str(loss)+'wowow.h5')
+        model.save('./homework/samsung_2_startprice/models/savemodellstm97/r2__'+r2str+str(loss)+'wowow.h5')
     elif end_price <= 66000 and 63000 >= end_price and r2 > 0.96:
-        model.save('./homework/samsung_2_startprice/models/savemodel/96/'+str(i)+'번째'+str(loss)+'wowow.h5')
-
+        model.save('./homework/samsung_2_startprice/models/savemodel/lstm96/r2__'+r2str+str(loss)+'wowow.h5')
