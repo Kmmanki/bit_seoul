@@ -54,7 +54,6 @@ sam_dense = Dense(300, activation='relu')(output)
 sam_dense = Dense(300, activation='relu')(sam_dense)
 sam_dense = Dense(300, activation='relu')(sam_dense)
 sam_dense = Dense(300, activation='relu')(sam_dense)
-sam_dense = Dense(300, activation='relu')(sam_dense)
     
 
 bit_input = Input(shape=(5,4))
