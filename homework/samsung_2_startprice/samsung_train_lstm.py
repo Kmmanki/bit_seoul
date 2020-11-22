@@ -84,15 +84,15 @@ output = Dense(1)(output)
  
 model = Model(inputs=[sam_input, bit_input, kosdak_input, gold_input], outputs = [output])
  
-model.compile(loss='mse', optimizer='adam', metrics=[])
-ealystopping = EarlyStopping(monitor='loss', patience=20, mode='min')
-modelPath = './homework/samsung_2_startprice/models/samsung_model-{val_loss:.4f}.hdf5'
-checkPoint = ModelCheckpoint(filepath=modelPath, monitor='val_loss', save_best_only=True, mode='auto')
+for i in range(1,10,2):
+    model.compile(loss='mse', optimizer='adam', metrics=[])
+    ealystopping = EarlyStopping(monitor='loss', patience=30, mode='min')
+    modelPath = './homework/samsung_2_startprice/models/samsung_model-{val_loss:.4f}.hdf5'
+    checkPoint = ModelCheckpoint(filepath=modelPath, monitor='val_loss', save_best_only=True, mode='auto')
  
-model.summary()
-for i in range(1,26):
+    model.summary()
     hist = model.fit([x_samsung_train, x_bit_train, x_kosdak_train, x_gold_train]
-                    , [y_samsung_train], epochs=500, callbacks=[ealystopping, checkPoint],
+                    , [y_samsung_train], epochs=800, callbacks=[ealystopping, checkPoint],
                     verbose=2, validation_split=0.2, batch_size=4)
  
     loss = model.evaluate([x_samsung_test, x_bit_test, x_kosdak_test, x_gold_test], [y_samsung_test], batch_size=4)
@@ -123,13 +123,22 @@ for i in range(1,26):
  
  
  
-    plt.subplot(5,5,i)
+    plt.subplot(5,2,i)
     plt.plot(y_predict, marker='.', c='red')
     plt.plot(y_samsung_test, marker='.', c='blue')
     plt.grid()
     plt.title(str(i)+"times"+r2str)
     plt.ylabel('price')
     plt.legend(['predict','real_price'])
+
+    plt.subplot(5,2,i+1)
+    plt.plot(hist.history['loss'], marker='.', c='red')
+    plt.plot(hist.history['val_loss'], marker='.', c='blue')
+    plt.grid()
+    plt.title(str(i)+"times_loss")
+    plt.ylabel('loss')
+    plt.legend(['loss','val_loss'])
+ 
  
  
 plt.show()
