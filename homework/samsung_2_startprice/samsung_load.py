@@ -31,7 +31,7 @@ x_predict_kosdak = x_predict_kosdak.reshape(1,x_predict_kosdak.shape[0], x_predi
 x_predict_gold = x_predict_gold.reshape(1,x_predict_gold.shape[0], x_predict_gold.shape[1])
 
 
-model = load_model('./homework/samsung_2_startprice/models/samsung_model-373808.6250.hdf5')
+model = load_model('./homework/samsung_2_startprice/models/savemodel/lstm99/r2__0.990383025.59375wowow.h5')
 
 end_price = model.predict([x_predict_samsung,x_predict_bit,x_predict_kosdak, x_predict_gold ])
 print(end_price)
