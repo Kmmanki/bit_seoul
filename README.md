@@ -41,6 +41,14 @@ RNN, LSTM GRU, simpleRNN, return_sequenses
 ------------
 <br>
 
+### 10일차 2020.11.20 삼성 주가 맞추기
+
+### 11일차 2020.11.23
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-23%20%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%2C%20svc%2C%20randomForest%2C%20KNeighbors.md'>
+머신러닝, svc, randomForest, KNeighbors
+</a>
+
+
 **참고 사이트** 
 
 <br>
