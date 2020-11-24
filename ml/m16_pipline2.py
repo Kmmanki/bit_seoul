@@ -33,9 +33,9 @@ parameters = [
 # kfold = KFold(n_splits=5, shuffle=True) cv=5로 대체
 
 pipe = make_pipeline(MinMaxScaler(), LinearSVC())
-pipe = Pipeline([
-    ("minmax",MinMaxScaler()), ('malddong',SVC())
-])
+# pipe = Pipeline([
+#     ("minmax",MinMaxScaler()), ('malddong',SVC())
+# ])
 model = RandomizedSearchCV(pipe, parameters , cv=5, verbose=2)
 
 model.fit(x_train, y_train)

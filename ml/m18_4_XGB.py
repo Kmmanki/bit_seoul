@@ -28,9 +28,8 @@ print(cancer.data.shape[1])
 
 def plot_feature_importances_cancer(data_name, model):
     n_features = data_name.data.shape[1]
-    plt.barh(np.arange(n_features), model.feature_importances_,
-    align='center')
-    plt.yticks(np.arange(n_features), data_name.feature_names)
+    plt.barh(np.arange(n_features), model.feature_importances_,  align='center') #30개의 배열만들고 배열에 importance 하나씩 매칭
+    plt.yticks(np.arange(n_features), data_name.feature_names) #이름을 매칭
     plt.xlabel('Feacutre Importance')
     plt.ylabel('Feature')
     plt.ylim(-1, n_features)
