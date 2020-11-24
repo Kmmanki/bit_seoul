@@ -37,9 +37,6 @@ RNN, LSTM GRU, simpleRNN, return_sequenses
 ### 9일차 2020.11.19
 <a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-19%20numpy.save()%2C%20pandas%2C%20conv1D.md'>numpy.save(), pandas, conv1D
 </a>
-<br>
-------------
-<br>
 
 ### 10일차 2020.11.20 삼성 주가 맞추기
 
@@ -47,6 +44,17 @@ RNN, LSTM GRU, simpleRNN, return_sequenses
 <a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-23%20%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%2C%20svc%2C%20randomForest%2C%20KNeighbors.md'>
 머신러닝, svc, randomForest, KNeighbors
 </a>
+
+### 12일차 2020.11.24
+
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-24%20%EA%B5%90%EC%B0%A8%EA%B2%80%EC%A6%9D%2C%20kfold%2CSearch%2C%20pipelinef%2Ceature_importances_.md'>
+교차검증, kfold,Search, pipelinef,eature_importances_
+</a>
+
+<br>
+------------
+<br>
+
 
 
 **참고 사이트** 
