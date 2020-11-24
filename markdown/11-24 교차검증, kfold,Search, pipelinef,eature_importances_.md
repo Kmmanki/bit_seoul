@@ -5,6 +5,7 @@
 교차검증, kfold,Search, pipelinef,eature_importances_
 
 ## 검증
+m12
 
 검증하는 대상이 모든 데이터를 대변할 수 없음.
 
@@ -27,7 +28,7 @@ validationSet을 계속해서 변경하여 사용(Cross Validation, CV)
     
 
 ### GridSearchCV
-
+m14
 하이퍼 파라미터를 경우에 수를 모두 확인하여 모델을 반환
 
 ```
@@ -81,6 +82,7 @@ model = RandomizedSearchCV(SVC(), parameters , cv=kfold)
 
 
 ### Pipeline
+m16
 
 pipeline을 사용하게 되면 cross_val 사용 시 train만 fit을 하게 되며 validation은 transform만 진행됨
 
@@ -116,7 +118,7 @@ model = RandomizedSearchCV(pipe, parameters , cv=5, verbose=2)
 
 
 ## feature_importances_
-
+m18
 어떠한 컬럼이 결과를 만드는데 가장 영향을 많이주는 컬럼인지 파악 가능
 
 
