@@ -10,7 +10,11 @@ from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.datasets import load_wine
 warnings.filterwarnings('ignore')
 
-x,y = load_wine(return_X_y=True)
+wine = pd.read_csv('./data/csv/winequality-white.csv', header=0, sep=';')
+print(wine.shape)
+
+x= wine.iloc[:, 0:11]
+y = wine.iloc[:, 11]
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, random_state=66, shuffle=True, train_size=0.8)
 
@@ -38,14 +42,14 @@ print('최종 정답률: ', accuracy_score(y_test, y_predict))
 
 '''
 GridSearchCv
-최적의 파라미터:  RandomForestClassifier(max_depth=12, min_samples_leaf=7, min_samples_split=5,
-                       n_jobs=-1)
-최종 정답률:  1.0
+최적의 파라미터:  RandomForestClassifier(max_depth=12, min_samples_leaf=5, min_samples_split=10,
+                       n_estimators=200, n_jobs=-1, verbose=1)
+최종 정답률:  0.6469387755102041
 
 RandomizedSearchCV
-적의 파라미터:  RandomForestClassifier(max_depth=6, min_samples_leaf=10, min_samples_split=10,
-                       n_estimators=200, n_jobs=-1, verbose=1)
-                       최종 정답률:  1.0
+최적의 파라미터:  RandomForestClassifier(max_depth=10, min_samples_leaf=5, min_samples_split=3,
+                       n_jobs=-1, verbose=1)
+                       최종 정답률:  0.6428571428571429
 '''
 
 
