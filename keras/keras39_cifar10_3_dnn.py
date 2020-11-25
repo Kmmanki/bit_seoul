@@ -27,7 +27,7 @@ model.summary()
 model.compile(loss='categorical_crossentropy', metrics=['acc'], optimizer='adam')
 ealystopping = EarlyStopping(monitor='loss',patience=20, mode='auto')
 to_hist = TensorBoard(log_dir='grahp',write_graph=True, write_images=True, histogram_freq=0)
-model.fit(x_train, y_train, epochs=3, batch_size=512, validation_split=0.2, callbacks=[ealystopping, to_hist])
+model.fit(x_train, y_train, epochs=100, batch_size=64, validation_split=0.2, callbacks=[ealystopping, to_hist])
 
 loss, acc=model.evaluate(x_test, y_test, batch_size=512)
 

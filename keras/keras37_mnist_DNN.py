@@ -30,12 +30,8 @@ print(y_train.shape)
 #2. 모델
 model = Sequential()
 model.add(Dense(10, input_shape=(row, )))
-model.add(Dense(200, activation='relu'))
-model.add(Dense(300, activation='relu'))
-model.add(Dense(500, activation='relu'))
-model.add(Dense(300, activation='relu'))
-model.add(Dense(200, activation='relu'))
-model.add(Dense(100, activation='relu'))
+model.add(Dense(64, activation='relu'))
+model.add(Dense(64, activation='relu'))
 model.add(Dense(10, activation='softmax'))
 
 model.summary()
@@ -43,9 +39,9 @@ model.summary()
 
 #3. 컴파일 , 훈련
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['Accuracy'] ) 
-earlyStopping = EarlyStopping(monitor='loss', patience=30, mode='min')
+earlyStopping = EarlyStopping(monitor='loss', patience=10, mode='min')
 # # to_hist = TensorBoard(log_dir='graph', histogram_freq=0, write_graph=True, write_images=True)
-hist = model.fit(x_train, y_train, validation_split=0.2, epochs=500, batch_size=32, verbose=1, callbacks=[earlyStopping])
+hist = model.fit(x_train, y_train, validation_split=0.2, epochs=100, batch_size=32, verbose=1, callbacks=[earlyStopping])
 
 # #4. 예측
 loss, acc = model.evaluate(x_test, y_test, batch_size=32)
