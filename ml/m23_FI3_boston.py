@@ -48,11 +48,11 @@ x_test  = np.delete(x_test, delete_list, axis=1)
 model2.fit(x_train, y_train)
 remove_score = model2.score(x_test, y_test)
 print('디폴트 score', default_score)
-print('최하위 30%',delete_list,"제거 점수",remove_score )
+print('최하위 20%',delete_list,"제거 점수",remove_score )
 
 '''
 디폴트 score 0.8827496232473773
-최하위 30% [1, 6, 11] 제거 점수 0.8584355901417511
+최하위 20% [1, 6, 11] 제거 점수 0.8584355901417511
 '''
 
 

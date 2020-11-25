@@ -1,6 +1,6 @@
 #기준 xg
 #FI 0 제거
-#하위 30% 제거
+#하위 3% 제거
 #디폴트와 성능비교
 
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
@@ -57,11 +57,11 @@ x_test  = np.delete(x_test, delete_list, axis=1)
 model2.fit(x_train, y_train)
 remove_score = model2.score(x_test, y_test)
 print('디폴트 score', default_score)
-print('최하위 30%',delete_list,"제거 점수",remove_score )
+print('최하위 20%',delete_list,"제거 점수",remove_score )
 
 '''
 디폴트 score 0.6683673469387755
-최하위 30% [4, 7, 8] 제거 점수 0.6142857142857143
+최하위 20% [4, 7, 8] 제거 점수 0.6142857142857143
 '''
 
 
