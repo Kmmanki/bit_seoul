@@ -51,6 +51,13 @@ RNN, LSTM GRU, simpleRNN, return_sequenses
 교차검증, kfold,Search, pipelinef,eature_importances_
 </a>
 
+
+### 13일차 2020.11.25
+
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-25%20PCA%2C%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5%2C%20XGBosster_param.md'>
+PCA,비지도학습, XGBosster_param
+</a>
+
 <br>
 ------------
 <br>
