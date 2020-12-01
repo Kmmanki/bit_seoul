@@ -21,8 +21,6 @@ print(y.shape) #(12633,)
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.8, random_state =66)
 
-# print(x_train.shape) #(1039, 178, 218, 3)
-# print(x_test.shape)
 
 
 model = Sequential()
@@ -50,7 +48,7 @@ modelPath = './homework/project1/models/checkpoints/PJ-Conv2D-{val_loss:.4f}.hdf
 checkPoint = ModelCheckpoint(filepath=modelPath, monitor='val_loss', save_best_only=True, mode='auto' )
 
 ealyStopping = EarlyStopping(monitor='val_loss', mode='max', patience=20)
-for i in range(1,3,2):
+for i in range(1,11,2):
     
     hist = model.fit(x_train, y_train, 
                         epochs=300, 
@@ -91,15 +89,7 @@ for i in range(1,3,2):
 plt.show()
 
 '''
-rsmprop
-loss 0.18207214772701263
-acc 0.989315390586853
-예상값 [1. 1. 1. ... 1. 0. 0.]
-정답값 [1. 1. 1. ... 1. 0. 0.]
-예상값 1073.0
-정답값의 합 1082.0
 
-adam
 loss 0.12941297888755798
 acc 0.989315390586853
 예상값 [1. 1. 1. ... 1. 0. 0.]
