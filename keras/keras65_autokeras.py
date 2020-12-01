@@ -5,6 +5,7 @@ import tensorflow as tf
 from tensorflow.keras.datasets import mnist
 from tensorflow.python.keras.utils.data_utils import Sequence
 import autokeras as ak
+from tensorflow.keras.models import load_model
 
 x_train = np.load('./data/keras63_train_x.npy')
 x_test = np.load('./data/keras63_test_x.npy')
@@ -20,15 +21,15 @@ clf = ak.ImageClassifier(
     overwrite=True,
     max_trials=1
 )
-
 clf.fit(x_train, y_train, epochs=50)
+clf = load_model("./homework/project1/models/autokeras1.h5", custom_objects=ak.CUSTOM_OBJECTS)
 model = clf.export_model()
 predicted_y = clf.predict(x_test)
 print(predicted_y)
 try:
-    model.save('./homework/proejct1/models/autokeras1.h5')
+    model.save('./homework/project1/models/autokeras1.h5')
 except:
-    model.save('./homework/proect1/models/autokeras1.tk', save_format="tf")
+    model.save('./homework/project1/models/autokeras1', save_format="tf")
 print(clf.evaluate(x_test, y_test))
 
 '''
