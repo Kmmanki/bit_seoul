@@ -146,3 +146,9 @@ homework/project1/npy/proejct1_y.npy
 homework/project1/npy/project1_x_pca.npy
 image_classifier/trial_75e53d576613b5132492b818e7110b26/pipeline
 image_classifier/trial_75e53d576613b5132492b818e7110b26/trial.json
+bottleneck_features_train.npy
+bottleneck_features_validation.npy
+test_nup.npy
+moooooodel.h5
+train_nup.npy
+homework/project1/models/autokeras1.h5
