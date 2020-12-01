@@ -31,7 +31,7 @@ print(x.shape)
 x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.8, random_state =66)
 
 
-model = XGBClassifier()
+model = XGBClassifier( tree_method='gpu_hist',       predictor='gpu_predictor')
 model.fit(x_train, y_train)
 
 acc= model.score(x_test, y_test)
@@ -72,7 +72,7 @@ parameters = [
 ]
 
 
-model = RandomizedSearchCV(XGBClassifier(), parameters ,cv=5)
+model = RandomizedSearchCV(XGBClassifier(tree_method='gpu_hist',       predictor='gpu_predictor'), parameters ,cv=5)
 model.fit(x_train, y_train)
 
 y_predict = model.predict(x_predict)
@@ -84,3 +84,5 @@ print("acc:", accuracy_score(y_real,y_predict))
 
 end_time = datetime.datetime.now()
 print( end_time -start_time )
+
+
