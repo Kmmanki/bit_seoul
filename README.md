@@ -58,6 +58,19 @@ RNN, LSTM GRU, simpleRNN, return_sequenses
 PCA,비지도학습, XGBosster_param
 </a>
 
+### 14일차 2020.11.26
+
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/11-26%20SelectFromModel%20%2CImageDataGenerator%2C%20subset%2C%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%A6%9D%ED%8F%AD.md'>
+SelectFromModel ,ImageDataGenerator, subset, 이미지 증폭
+</a>
+
+### 17일차 2020.12.01 이전까진 개인 프로젝트 기간
+
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/12-01%201%EC%B0%A8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%B0%9C%ED%91%9C%20%ED%9B%84%20%EB%AA%A8%EB%A5%B4%EB%8A%94%20%EA%B2%83%20%EC%A1%B0%EC%82%AC.md'>
+학우들 발표 중 모르는 것 모아서 조사,sparse,kernel_initializer,kernel_regularizer, batch normalization, 완전제거법, label Encoding, 부분 PCA, xgbosst gpu옵션
+</a>
+
+
 <br>
 ------------
 <br>
