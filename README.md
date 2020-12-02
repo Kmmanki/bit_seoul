@@ -70,6 +70,13 @@ SelectFromModel ,ImageDataGenerator, subset, 이미지 증폭
 학우들 발표 중 모르는 것 모아서 조사,sparse,kernel_initializer,kernel_regularizer, batch normalization, 완전제거법, label Encoding, 부분 PCA, xgbosst gpu옵션
 </a>
 
+### 18일차 2020.12.01 이전까진 개인 프로젝트 기간
+
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/12-02keras%EB%AA%A8%EB%8D%B8%20%ED%95%98%EC%9D%B4%ED%8D%BC%20%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0%20%ED%8A%9C%EB%8B%9D%2C%20%20%ED%99%9C%EC%84%B1%ED%95%A8%EC%88%98%2C%20%EB%9E%8C%EB%8B%A4%ED%95%A8%EC%88%98%2C%20learning_rate%2C%20BatchNormalization.md'>
+keras모델 하이퍼 파라미터 튜닝,  활성함수, 람다함수, learning_rate, BatchNormalization
+</a>
+
+
 
 <br>
 ------------
