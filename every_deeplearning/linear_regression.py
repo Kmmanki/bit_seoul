@@ -10,9 +10,9 @@ y = [i[1] for i in data]
 # print(x)
 # print(y)
 
-plt.figure(figsize=(8,5))
-plt.scatter(x,y)
-plt.show()
+# plt.figure(figsize=(8,5))
+# plt.scatter(x,y)
+# plt.show()
 
 x_data = np.array(x)
 y_data = np.array(y)
@@ -20,7 +20,7 @@ y_data = np.array(y)
 w = 0
 b = 0
 
-learing_rage = 0.003 #학습률이 너무 크거나 작으면 발산 
+learing_rage = 0.00005 #학습률이 너무 크거나 작으면 발산 
 ehpochs = 2001
 
 for i in range(ehpochs):
@@ -42,5 +42,6 @@ print('=================================================')
 y_predict = w * x_data + b
 print(y_predict)
 plt.scatter(x,y)
-plt.plot([min(x_data), max(x_data)], [min(y_predict), max(y_predict)])
+plt.plot(y_predict)
+# plt.plot([min(x_data), max(x_data)], [min(y_predict), max(y_predict)])
 plt.show()

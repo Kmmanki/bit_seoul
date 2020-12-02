@@ -152,3 +152,8 @@ test_nup.npy
 moooooodel.h5
 train_nup.npy
 homework/project1/models/autokeras1.h5
+every_deeplearning/linear_regression.py
+homework/project1/xgb_trian_FI.py
+pandas/load_S&P_ml.py
+test/img_arg_test.py
+test/mnist_upscale.py
