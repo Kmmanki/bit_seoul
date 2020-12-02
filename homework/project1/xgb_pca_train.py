@@ -6,20 +6,23 @@ from sklearn.metrics import accuracy_score
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from sklearn.decomposition import PCA
 import datetime 
+import pickle as pk
+
+
 x=np.load('./homework/project1/npy/proejct1_x.npy')
 y=np.load('./homework/project1/npy/proejct1_y.npy')
 
-x= x[:1000]
-y = y[:1000]
+
 x = x.reshape(x.shape[0], x.shape[1]*x.shape[2]*x.shape[3])
 print(x.shape)
 start_time = datetime.datetime.now()
 pca = PCA(n_components=0.99)
 x = pca.fit_transform(x)
+
 end_time = datetime.datetime.now()
 print( end_time -start_time )
-
 print(x.shape)
+
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.8, random_state =66)
 
@@ -30,7 +33,10 @@ parameters = [
 ]
 
 
-model = RandomizedSearchCV(XGBClassifier(), parameters ,cv=5)
+model = RandomizedSearchCV(XGBClassifier(
+                            tree_method='gpu_hist', 
+                            predictor='gpu_predictor'
+), parameters ,cv=5)
 model.fit(x_train, y_train)
 
 acc= model.score(x_test, y_test)
