@@ -40,27 +40,25 @@ def build_model(drop=0.5, optimizer='adam'
     return model
 
 def create_hyperparameter():
-    batchs = [216]
-    optimizer = ['rmsprop', 'adam', 'adadelta']
+    batchs = [2048]
+    optimizer = ['adam']
     dropout = [0.1]
-    epochs = [50]
+    epochs = [1]
     loss = ['categorical_crossentropy']
     patience = [5]
     layernum = [1]
     nodenum1 = [16]
     nodenum2 = [32]
-    es = [
-        EarlyStopping(monitor='loss', mode='auto', patience=1),
-        EarlyStopping(monitor='loss', mode='auto', patience=2),
-        EarlyStopping(monitor='loss', mode='auto', patience=3),
-    ]
+    # es = [
+    #     [EarlyStopping(monitor='loss', mode='auto', patience=1)]
+    # ]
     
     return {'batch_size': batchs, 'optimizer':optimizer,
              'drop':dropout, 'epochs':epochs, 'loss': loss,
              
              'patience':patience, 'layernum':layernum,
              'nodenum1':nodenum1, 'nodenum2':nodenum2,
-             'callbacks': es
+            #  'callbacks': es
              }
     
 hyperparameters = create_hyperparameter()
@@ -70,7 +68,9 @@ from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
 
 model = KerasClassifier(build_fn=build_model, verbose=1) #keras를 sklean으로 래핑 시킨다.
 
-search = RandomizedSearchCV(model, hyperparameters, cv=3) #sklearn만 사용할 수 있다. 
+search = RandomizedSearchCV(model, hyperparameters,cv=3) #sklearn만 사용할 수 있다. 
+# es = EarlyStopping(monitor='loss', mode='auto', patience=1)
+# search.fit(x_train, y_train, callbacks=[es])
 search.fit(x_train, y_train)
 
 print("best_estimator: ",search.best_estimator_)
