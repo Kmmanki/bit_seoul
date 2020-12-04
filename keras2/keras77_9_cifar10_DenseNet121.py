@@ -23,6 +23,7 @@ y_test = to_categorical(y_test)
 name = 'DenseNet121'
 t_model = DenseNet121(include_top=False, weights='imagenet', input_shape=(32,32,3))
 ##
+t_model.trainable=False
 model = Sequential()
 model.add(t_model)
 model.add(Flatten())
@@ -43,3 +44,8 @@ loss, acc=model.evaluate(x_test, y_test, batch_size=32)
 
 print(name," acc : ",acc)
 print(name," loss : ",loss)
+
+'''
+DenseNet121  acc :  0.6492000222206116
+DenseNet121  loss :  1.0359071493148804
+'''

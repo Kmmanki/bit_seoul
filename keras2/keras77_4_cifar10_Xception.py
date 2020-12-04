@@ -21,8 +21,10 @@ y_test = to_categorical(y_test)
 #모델링
 ##여기만 수정
 name = 'Xception'
-t_model = Xception(include_top=False, weights='imagenet', input_shape=(32,32,3))
+# t_model = Xception(include_top=False, weights='imagenet', input_shape=(32,32,3)) #가로세로 71보다 커야한다.
+t_model = Xception(,)
 ##
+t_model.trainable=False
 model = Sequential()
 model.add(t_model)
 model.add(Flatten())

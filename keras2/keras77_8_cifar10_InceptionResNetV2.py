@@ -21,8 +21,9 @@ y_test = to_categorical(y_test)
 #모델링
 ##여기만 수정
 name = 'InceptionResNetV2'
-t_model = InceptionResNetV2(include_top=False, weights='imagenet', input_shape=(32,32,3))
+t_model = InceptionResNetV2(include_top=False, weights='imagenet', input_shape=(32,32,3)) #75이하 안됨
 ##
+t_model.trainable=False
 model = Sequential()
 model.add(t_model)
 model.add(Flatten())

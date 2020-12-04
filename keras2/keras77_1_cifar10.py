@@ -19,14 +19,17 @@ model = Sequential()
 model.add(Conv2D(64, (3,3), input_shape=(32,32,3)))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
+model.add(MaxPooling2D())
 
-model.add(Conv2D(64, (3,3), input_shape=(32,32,3)))
+model.add(Conv2D(64, (3,3) ))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
+model.add(MaxPooling2D())
 
-model.add(Conv2D(32, (3,3), input_shape=(32,32,3)))
+model.add(Conv2D(32, (3,3)))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
+model.add(MaxPooling2D())
 
 model.add(Flatten())
 model.add(Dense(126))
@@ -40,20 +43,16 @@ ealystopping = EarlyStopping(monitor='loss',patience=20, mode='auto')
 reduce_lr = ReduceLROnPlateau(monitor='val_loss', patience=3,
                              factor=0.5, verbose=1)
 
-model.fit(x_train, y_train, epochs=300, batch_size=512, validation_split=0.2, callbacks=[ealystopping, reduce_lr])
+model.fit(x_train, y_train, epochs=100, batch_size=32, validation_split=0.2, callbacks=[ealystopping, reduce_lr])
 
-loss, acc=model.evaluate(x_test, y_test, batch_size=512)
-
-x_predict = x_test[20:30]
-y_answer = y_test[20:30]
+loss, acc=model.evaluate(x_test, y_test, batch_size=32)
 
 
-y_predict = model.predict(x_predict)
-
-y_predict = np.argmax(y_predict, axis=1)
-y_answer = np.argmax(y_answer, axis=1)
 
 print("acc",acc)
 print("loss",loss)
-print("정답",y_answer)
-print("예상값",y_predict)
+
+'''
+acc 0.7328000068664551
+loss 1.1285741329193115
+'''

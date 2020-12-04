@@ -23,6 +23,7 @@ y_test = to_categorical(y_test)
 name = 'ResNet101'
 t_model = ResNet101(include_top=False, weights='imagenet', input_shape=(32,32,3))
 ##
+t_model.trainable=False
 model = Sequential()
 model.add(t_model)
 model.add(Flatten())
@@ -43,3 +44,7 @@ loss, acc=model.evaluate(x_test, y_test, batch_size=32)
 
 print(name," acc : ",acc)
 print(name," loss : ",loss)
+'''
+ResNet101  acc :  0.3402999937534332
+ResNet101  loss :  1.8770614862442017
+'''

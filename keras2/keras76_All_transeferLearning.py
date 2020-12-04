@@ -11,11 +11,11 @@ from tensorflow.keras.models import Sequential
 
 vgg16 = VGG16()
 # vgg16.summary()
-print("VGG16",len(vgg16.trainable_weights)) 
+print("VGG16",len(vgg16.trainable_weights)/2) 
 print('----------------------------------------------------------------------------')
 vgg16 = VGG19()
 # vgg16.summary()
-print("VGG19",len(vgg16.trainable_weights)) 
+print("VGG19레이어 수 ",len(vgg16.trainable_weights)/2) 
 print('----------------------------------------------------------------------------')
 vgg16 = Xception()
 # vgg16.summary()
@@ -23,86 +23,77 @@ print("Xception",len(vgg16.trainable_weights)/2)
 print('----------------------------------------------------------------------------')
 vgg16 = ResNet101()
 # vgg16.summary()
-print("ResNet101",len(vgg16.trainable_weights)) 
+print("ResNet101",len(vgg16.trainable_weights)/2) 
 print('----------------------------------------------------------------------------')
 vgg16 = ResNet101V2()
 # vgg16.summary()
-print("ResNet101V2",len(vgg16.trainable_weights)) 
+print("ResNet101V2",len(vgg16.trainable_weights)/2) 
 print('----------------------------------------------------------------------------')
 vgg16 = ResNet152()
 # vgg16.summary()
-print("ResNet152",len(vgg16.trainable_weights)) 
+print("ResNet152",len(vgg16.trainable_weights)/2) 
 print('----------------------------------------------------------------------------')
 vgg16 = ResNet50()
 # vgg16.summary()
-print("ResNet50",len(vgg16.trainable_weights)) 
+print("ResNet50",len(vgg16.trainable_weights)/2) 
 print('----------------------------------------------------------------------------')
 vgg16 = ResNet50V2()
 # vgg16.summary()
-print("ResNet50V2",len(vgg16.trainable_weights)) 
+print("ResNet50V2",len(vgg16.trainable_weights)/2) 
 
 print('----------------------------------------------------------------------------')
 vgg16 = NASNetLarge()
 # vgg16.summary()
-print("NASNetLarge",len(vgg16.trainable_weights)) 
+print("NASNetLarge",len(vgg16.trainable_weights)/2) 
 
 print('----------------------------------------------------------------------------')
 vgg16 = NASNetMobile()
 # vgg16.summary()
-print("NASNetMobile",len(vgg16.trainable_weights)) 
+print("NASNetMobile",len(vgg16.trainable_weights)/2) 
 
 print('----------------------------------------------------------------------------')
 vgg16 = DenseNet121()
 # vgg16.summary()
-print("DenseNet121",len(vgg16.trainable_weights)) 
+print("DenseNet121",len(vgg16.trainable_weights)/2) 
 
 print('----------------------------------------------------------------------------')
 vgg16 = DenseNet169()
 # vgg16.summary()
-print("DenseNet169",len(vgg16.trainable_weights)) 
+print("DenseNet169",len(vgg16.trainable_weights)/2) 
 
 print('----------------------------------------------------------------------------')
 vgg16 = DenseNet201()
 # vgg16.summary()
-print("DenseNet201",len(vgg16.trainable_weights)) 
+print("DenseNet201",len(vgg16.trainable_weights)/2) 
 
 print('----------------------------------------------------------------------------')
 vgg16 = MobileNetV2()
 # vgg16.summary()
-print("MobileNetV2",len(vgg16.trainable_weights)) 
+print("MobileNetV2",len(vgg16.trainable_weights)/2) 
 
 
 print('----------------------------------------------------------------------------')
 vgg16 = MobileNet()
 # vgg16.summary()
-print("MobileNet",len(vgg16.trainable_weights)) 
+print("MobileNet",len(vgg16.trainable_weights)/2) 
 
 
 
 print('----------------------------------------------------------------------------')
 vgg16 = InceptionV3()
 # vgg16.summary()
-print("InceptionV3",len(vgg16.trainable_weights)) 
+print("InceptionV3",len(vgg16.trainable_weights)/2) 
 
 print('----------------------------------------------------------------------------')
 vgg16 = InceptionResNetV2()
 # vgg16.summary()
-print("InceptionResNetV2",len(vgg16.trainable_weights)) 
+print("InceptionResNetV2",len(vgg16.trainable_weights)/2) 
 
 
 
+'''
+레이어의 수 
 
 
 
-
-
-
-# vgg = VGG16(weights='imagenet', input_shape=(32,32,3), include_top=False)
-# vgg.trainable=False
-
-# model = Sequential()
-# model.add(vgg)
-# model.add(Flatten())
-# model.add(Dense(10, activation='softmax'))
-# model.summary()
-
+'''

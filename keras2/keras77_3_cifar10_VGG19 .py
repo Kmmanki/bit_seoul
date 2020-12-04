@@ -23,6 +23,7 @@ y_test = to_categorical(y_test)
 name = 'VGG19'
 t_model = VGG19(include_top=False, weights='imagenet', input_shape=(32,32,3))
 ##
+t_model.trainable=False
 model = Sequential()
 model.add(t_model)
 model.add(Flatten())
@@ -43,3 +44,7 @@ loss, acc=model.evaluate(x_test, y_test, batch_size=32)
 
 print(name," acc : ",acc)
 print(name," loss : ",loss)
+'''
+VGG19  acc :  0.5803999900817871
+VGG19  loss :  1.2120431661605835
+'''
