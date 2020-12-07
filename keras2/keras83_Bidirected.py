@@ -3,9 +3,10 @@ from tensorflow.keras.datasets import imdb
 import numpy as np
 import pandas as pd 
 import matplotlib.pyplot as plt
-from tensorflow.keras.layers import Embedding, LSTM, BatchNormalization, Activation, Dense, Bidirectional
+from tensorflow.keras.layers import Embedding, LSTM, BatchNormalization, Activation, Dense
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.callbacks import ReduceLROnPlateau, EarlyStopping
+
 
 (x_train, y_train), (x_test, y_test) = imdb.load_data(
     num_words=10000
@@ -34,19 +35,15 @@ x_test = pad_sequences(x_test,maxlen=100, padding='pre')
 print(x_train.shape) #(8982, 2376)
 model = Sequential()
 model.add(Embedding(10000, 30, input_length=2376))
-model.add(Bidirectional(LSTM(128))) #param 162816 #기존 모델을 아래에서 위로 한번 더 하기 때문에 2배
-# model.add(LSTM(128)) # 81408
+model.add(LSTM(128))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 
 model.add(Dense(256))
-
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 
 model.add(Dense(46, activation='softmax'))
-
-model.summary()
 
 model.compile(loss='sparse_categorical_crossentropy', metrics=['acc'], optimizer='adam')
 
