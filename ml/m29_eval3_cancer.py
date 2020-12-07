@@ -25,7 +25,7 @@ model = XGBClassifier(n_estimators=1000, learning_rate=0.01,
 
 
 model.fit(x_train, y_train, verbose=True,
-            eval_metric='error', #rmse, mse ,mae, logloss, error, auc
+            eval_metric=['error', 'logloss'], #rmse, mse ,mae, logloss, error, auc
             eval_set=[(x_train, y_train),(x_test, y_test)],
             early_stopping_rounds=20
             )
