@@ -44,9 +44,9 @@ print("전체 토큰 사이즈 : ", word_size)
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Embedding, LSTM,  Flatten, Conv1D
 # from tensorflow.keras. import 
-
+print(pad_x.shape)
 model = Sequential()
-# model.add(Embedding(25, 10, input_length=5)) #단어 사전의 개수, 아웃풋 노드의 수,  12,5의 5 = x의 cols_size
+# model.add(Embedding(25, 10, input_length=5)) #단어 사전의 개수, 아웃풋 노드의 수,  12,             5의 5 = x의 cols_size
 model.add(Embedding(25, 10)) #단어 사전의 개수, 아웃풋 노드의 수,  12,5의 5 = 가장 큰 문장의 cols
 #10의 벡터로 줄여준다. 즉 25,10
 # model.add(LSTM(32))
