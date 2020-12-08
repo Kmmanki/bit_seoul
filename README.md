@@ -70,14 +70,24 @@ SelectFromModel ,ImageDataGenerator, subset, 이미지 증폭
 학우들 발표 중 모르는 것 모아서 조사,sparse,kernel_initializer,kernel_regularizer, batch normalization, 완전제거법, label Encoding, 부분 PCA, xgbosst gpu옵션
 </a>
 
-### 18일차 2020.12.01 이전까진 개인 프로젝트 기간
+### 18일차 2020.12.02 
 
 <a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/12-02keras%EB%AA%A8%EB%8D%B8%20%ED%95%98%EC%9D%B4%ED%8D%BC%20%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0%20%ED%8A%9C%EB%8B%9D%2C%20%20%ED%99%9C%EC%84%B1%ED%95%A8%EC%88%98%2C%20%EB%9E%8C%EB%8B%A4%ED%95%A8%EC%88%98%2C%20learning_rate%2C%20BatchNormalization.md'>
 keras모델 하이퍼 파라미터 튜닝,  활성함수, 람다함수, learning_rate, BatchNormalization
 </a>
 
+### 19일차 2020.12.04 
+
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/12-04%20Redue%2C%20%EC%A0%84%EC%9D%B4%ED%95%99%EC%8A%B5%2C%20embedding%2C%20tokenizer%2C%20pad_sequensce.md'>
+Redue, 전이학습, embedding, tokenizer, pad_sequensce
+</a>
 
 
+### 20일차 2020.12.07 
+
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/12-07Bidirectional%2C%20xgboost%20eval.md'>
+Bidirectional, xgboost, eval, outlier
+</a>
 <br>
 ------------
 <br>
