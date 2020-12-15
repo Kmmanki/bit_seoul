@@ -19,9 +19,10 @@ y=xy[0][1]
 print(x)
 
 
-# model = load_model('./homework/project1/models/OKKK_model_conv2d_train1_acc0.9861496090888977.h5') #conv2d model.save
+model = load_model('./homework/project1/models/OKKK_model_conv2d_train1_acc0.9861496090888977.h5') #conv2d model.save
 # model = load_model('./homework/project1/models/checkpoints/PJ-Conv2D-0.0446.hdf5') # conv2d #checkpoint
-model = load_model("./homework/project1/models/autokeras1.h5", custom_objects=ak.CUSTOM_OBJECTS) # autokeras
+# model = load_model("./homework/project1/models/autokeras1.h5", custom_objects=ak.CUSTOM_OBJECTS) # autokeras
+# model = load_model("./homework/project1/models/transe_model.h5", custom_objects=ak.CUSTOM_OBJECTS) # 전이학습
 
 model.summary()
 
@@ -33,14 +34,14 @@ for i in range(20):
     if y_predict[i] ==  0:
         plt.imshow(x[i])
         plt.title('bald')
-        plt.show()
+        # plt.show()
     else:
         plt.imshow(x[i])
         plt.title('ball')
-        plt.show()
+        # plt.show()
 
     #대머리 11 
     #축구공 9
 print('acc', accuracy_score(y,y_predict))
-plt.show()
+# plt.show()
 
