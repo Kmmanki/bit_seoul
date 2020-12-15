@@ -11,15 +11,15 @@ import numpy as np
 
 #1.데이터 전처리 스케일링, 라벨링
 color = 1
-x_train = x_train.reshape(x_train.shape[0], x_train.shape[1],x_train.shape[2], color ).astype('float32')/255.
-x_test  = x_test.reshape(x_test.shape[0], x_test.shape[1],x_test.shape[2], color ).astype('float32')/255.
+x_train = x_train.reshape(x_train.shape[0], x_train.shape[1],x_train.shape[2]  ).astype('float32')/255.
+x_test  = x_test.reshape(x_test.shape[0], x_test.shape[1],x_test.shape[2] ).astype('float32')/255.
 
 y_train = to_categorical(y_train)
 y_test = to_categorical(y_test)
 
 #2. 모델링 Conv2D
 model = Sequential()
-model.add(Conv1D(100, 2, input_shape=(28,28,color)))
+model.add(Conv1D(100, 2, input_shape=(28,28)))
 model.add(Dropout(0.1))
 model.add(Conv1D(100, 2, padding='same'))
 model.add(Dropout(0.1))
