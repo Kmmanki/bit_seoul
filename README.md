@@ -92,6 +92,11 @@ Bidirectional, xgboost, eval, outlier
 ------------
 <br>
 
+### ?일차 2020.12.16
+<a href='https://github.com/Kmmanki/bit_seoul/blob/main/markdown/12-16%20%EB%B9%84%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5%2C%20autoEncoder.md'>
+오토인코더, AE폴더
+</>
+
 
 
 **참고 사이트** 
